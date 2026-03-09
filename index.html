@@ -350,10 +350,21 @@ h1 {
 
 footer {
   text-align: center;
-  padding: 28px 24px;
+  padding: 24px;
   border-top: 1px solid var(--border);
-  color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 20px;
+}
+
+.footer-label {
+  color: var(--text-muted);
 }
 
 footer a {
@@ -506,7 +517,11 @@ footer a:hover { text-decoration: underline; }
 </div>
 
 <footer>
-  <a href="https://nickxma.github.io/meditation-quiz/" target="_blank">What kind of meditator are you? →</a>
+  <div class="footer-links">
+    <span class="footer-label">Explore more:</span>
+    <a href="https://nickxma.github.io/meditation-quiz/">What kind of meditator are you?</a>
+    <a href="https://nickxma.github.io/meditation-debates/">5 debates the field can't resolve</a>
+  </div>
 </footer>
 
 <script>
