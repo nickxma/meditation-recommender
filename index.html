@@ -26,6 +26,52 @@ body {
   flex-direction: column;
 }
 
+/* Top navbar */
+nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-brand {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
 header {
   text-align: center;
   padding: 52px 24px 24px;
@@ -378,6 +424,19 @@ footer a:hover { text-decoration: underline; }
 </head>
 <body>
 
+<nav>
+  <div class="nav-container">
+    <div class="nav-brand">Paradox of Acceptance</div>
+    <div class="nav-links">
+      <a href="https://nickxma.github.io/">Home</a>
+      <a href="https://nickxma.github.io/meditation-quiz/">Quiz</a>
+      <a href="https://nickxma.github.io/meditation-debates/">Debates</a>
+      <a href="https://nickxma.github.io/meditation-recommender/" class="active">Recommender</a>
+      <a href="https://nickxma.github.io/teacher-debates/">Teachers</a>
+    </div>
+  </div>
+</nav>
+
 <header>
   <h1>What Should I Actually Practice?</h1>
   <p class="subtitle">Five questions. A specific recommendation based on your goals, experience, and risk profile — tailored to your situation.</p>
@@ -518,9 +577,11 @@ footer a:hover { text-decoration: underline; }
 
 <footer>
   <div class="footer-links">
-    <span class="footer-label">Explore more:</span>
-    <a href="https://nickxma.github.io/meditation-quiz/">What kind of meditator are you?</a>
-    <a href="https://nickxma.github.io/meditation-debates/">5 debates the field can't resolve</a>
+    <span class="footer-label">Explore:</span>
+    <a href="https://nickxma.github.io/">Home</a>
+    <a href="https://nickxma.github.io/meditation-quiz/">Quiz</a>
+    <a href="https://nickxma.github.io/meditation-debates/">Debates</a>
+    <a href="https://nickxma.github.io/teacher-debates/">Teachers</a>
   </div>
 </footer>
 
