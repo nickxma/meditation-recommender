@@ -7,105 +7,78 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-  --bg: #fafafa;
-  --surface: #ffffff;
-  --border: #e3e8ee;
-  --text: #1a1a2e;
-  --text-secondary: #555;
-  --text-tertiary: #888;
-  --text-muted: #555;
-  --accent: #5469d4;
-  --accent-light: #eef1fb;
-  --accent-soft: #eef1fb;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #16161a;
-    --surface: #1e1e24;
-    --border: #2a2a30;
-    --text: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --text-tertiary: #666;
-    --text-muted: #a0a0a0;
-    --accent: #7b8ff5;
-    --accent-light: rgba(123, 143, 245, 0.1);
-    --accent-soft: rgba(123, 143, 245, 0.1);
-  }
-  .poa-nav { background: rgba(22, 22, 26, 0.88); }
-}
-
 body {
-  font-family: var(--font-sans);
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  background: #FFFFFF;
+  color: #555;
+  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Top navbar */
+/* Nav */
 .poa-nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  background: rgba(250, 250, 250, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border, #e3e8ee);
-  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif);
+  padding: 24px 48px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEE;
+  font-family: 'Inter', sans-serif;
 }
 .poa-nav-brand {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--text, #0a2540);
+  font-family: 'Newsreader', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #111;
   text-decoration: none;
-  letter-spacing: -0.02em;
 }
 .poa-nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 36px;
 }
 .poa-nav-links a {
-  font-size: 0.82rem;
-  color: var(--text-secondary, #425466);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
   text-decoration: none;
   transition: color 0.15s;
 }
 .poa-nav-links a:hover {
-  color: var(--text, #0a2540);
+  color: #111;
 }
 .poa-nav-links a.active {
-  color: var(--text, #0a2540);
-  font-weight: 600;
+  color: #111;
 }
 
 header {
   text-align: center;
   padding: 52px 24px 24px;
-  max-width: 600px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
 h1 {
+  font-family: 'Newsreader', serif;
   font-size: clamp(1.375rem, 4vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.01em;
   line-height: 1.25;
   margin-bottom: 14px;
 }
 
 .subtitle {
-  color: var(--text-muted);
-  font-size: 0.9375rem;
+  color: #555;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
   line-height: 1.6;
   max-width: 460px;
   margin: 0 auto;
@@ -119,21 +92,24 @@ h1 {
 
 .progress-bar-track {
   height: 3px;
-  background: var(--border);
+  background: #EEE;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: var(--accent);
+  background: #111;
   border-radius: 2px;
   transition: width 0.4s ease;
 }
 
 .progress-label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   text-align: right;
   margin-top: 8px;
 }
@@ -161,10 +137,9 @@ h1 {
 }
 
 .q-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+  background: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
   padding: 40px 36px;
 }
 
@@ -173,23 +148,22 @@ h1 {
 }
 
 .q-number {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-light);
-  padding: 5px 14px;
-  border-radius: 20px;
-  display: inline-block;
+  color: #999;
   margin-bottom: 20px;
 }
 
 .q-text {
+  font-family: 'Newsreader', serif;
   font-size: clamp(1.15rem, 2.8vw, 1.45rem);
-  font-weight: 640;
+  font-weight: 500;
+  color: #111;
   line-height: 1.4;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   margin-bottom: 28px;
 }
 
@@ -202,27 +176,28 @@ h1 {
 .opt-btn {
   width: 100%;
   padding: 14px 18px;
-  border-radius: 10px;
-  border: 1.5px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 0.9375rem;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  background: #FFFFFF;
+  color: #555;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
   font-weight: 400;
   cursor: pointer;
   text-align: left;
   line-height: 1.4;
   transition: border-color 0.15s, background 0.15s, color 0.15s;
-  font-family: inherit;
 }
 
 .opt-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-light);
+  border-color: #111;
+  background: #FAFAFA;
 }
 
 .opt-btn.selected {
-  border-color: var(--accent);
-  background: var(--accent-light);
+  border-color: #111;
+  background: #111;
+  color: #fff;
   font-weight: 500;
 }
 
@@ -235,30 +210,30 @@ h1 {
 
 .nav-btn {
   padding: 12px 28px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 0.9375rem;
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+  background: #FFFFFF;
+  color: #555;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s, opacity 0.15s;
-  font-family: inherit;
 }
 
-.nav-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.nav-btn:hover:not(:disabled) { border-color: #111; color: #111; }
 .nav-btn:disabled { opacity: 0.3; cursor: default; }
 
 .nav-btn.primary {
-  background: var(--accent);
+  background: #111;
   color: #fff;
-  border-color: var(--accent);
+  border-color: #111;
 }
 
 .nav-btn.primary:disabled {
-  background: var(--border);
-  border-color: var(--border);
-  color: var(--text-muted);
+  background: #E0E0E0;
+  border-color: #E0E0E0;
+  color: #999;
 }
 
 .nav-btn.primary:hover:not(:disabled) { opacity: 0.88; color: #fff; }
@@ -266,40 +241,43 @@ h1 {
 /* Results */
 
 .result-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
   overflow: hidden;
   width: 100%;
   max-width: 560px;
 }
 
 .result-header {
-  background: var(--accent);
+  background: #111;
   color: #fff;
   padding: 36px 36px 32px;
 }
 
 .result-tag {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.7;
   margin-bottom: 10px;
 }
 
 .result-name {
+  font-family: 'Newsreader', serif;
   font-size: clamp(1.3rem, 4vw, 1.75rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.01em;
   line-height: 1.2;
   margin-bottom: 12px;
 }
 
 .result-tagline {
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
   line-height: 1.6;
   opacity: 0.88;
 }
@@ -317,18 +295,20 @@ h1 {
 }
 
 .section-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #999;
   margin-bottom: 10px;
 }
 
 .what-is {
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
   line-height: 1.65;
-  color: var(--text);
+  color: #555;
 }
 
 .practices-list {
@@ -341,28 +321,31 @@ h1 {
 .practices-list li {
   display: flex;
   gap: 10px;
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
   line-height: 1.5;
+  color: #555;
 }
 
 .practices-list li::before {
-  content: '→';
-  color: var(--accent);
+  content: '\2192';
+  color: #111;
   font-weight: 600;
   flex-shrink: 0;
 }
 
 .caveat-box {
-  background: var(--accent-soft);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  background: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
   padding: 16px 18px;
 }
 
 .caveat-box p {
-  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .result-actions {
@@ -375,12 +358,13 @@ h1 {
 .action-link {
   display: block;
   padding: 14px 24px;
-  background: var(--accent);
+  background: #111;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
   text-align: center;
   transition: opacity 0.15s;
 }
@@ -391,33 +375,34 @@ h1 {
   width: 100%;
   padding: 12px;
   background: none;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-muted);
-  font-size: 0.875rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  color: #999;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
   cursor: pointer;
-  font-family: inherit;
   transition: border-color 0.15s;
 }
 
-.restart-btn:hover { border-color: var(--accent); color: var(--accent); }
+.restart-btn:hover { border-color: #111; color: #111; }
 
 /* Conflict indicator on result */
 .secondary-note {
-  font-size: 0.875rem;
-  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #555;
   line-height: 1.55;
   font-style: italic;
 }
 
 /* Footer */
 .site-footer {
-  border-top: 1px solid var(--border, #e3e8ee);
-  padding: 48px 24px 40px;
-  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif);
+  border-top: 1px solid #EEE;
+  padding: 48px 48px 40px;
+  font-family: 'Inter', sans-serif;
 }
 .footer-inner {
-  max-width: 640px;
+  max-width: 880px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -425,15 +410,16 @@ h1 {
   gap: 48px;
 }
 .footer-brand-link {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--text, #0a2540);
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #111;
   text-decoration: none;
 }
 .footer-brand-link:hover { opacity: 0.7; }
 .footer-tagline {
-  font-size: 0.82rem;
-  color: var(--text-tertiary, #8898aa);
+  font-size: 13px;
+  color: #999;
   margin-top: 8px;
   line-height: 1.5;
 }
@@ -447,49 +433,57 @@ h1 {
   gap: 6px;
 }
 .footer-col h4 {
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-tertiary, #8898aa);
+  letter-spacing: 2px;
+  color: #999;
   margin-bottom: 4px;
 }
 .footer-col a {
-  font-size: 0.82rem;
-  color: var(--text-secondary, #425466);
+  font-size: 13px;
+  color: #666;
   text-decoration: none;
   transition: color 0.15s;
 }
 .footer-col a:hover {
-  color: var(--text, #0a2540);
+  color: #111;
 }
+
+@media (max-width: 900px) {
+  .poa-nav { padding: 24px 24px; }
+  .site-footer { padding: 48px 24px 40px; }
+  .main { padding: 36px 24px 52px; }
+}
+
 @media (max-width: 600px) {
   .footer-inner {
     flex-direction: column;
     gap: 32px;
   }
-  .poa-nav { padding: 0 16px; height: 48px; }
-  .poa-nav-brand { font-size: 0.82rem; }
-  .poa-nav-links { gap: 16px; }
-  .poa-nav-links a { font-size: 0.78rem; }
+  .poa-nav { padding: 16px; }
+  .poa-nav-brand { font-size: 18px; }
+  .poa-nav-links { gap: 24px; }
+  .poa-nav-links a { font-size: 12px; }
 }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="https://paradoxofacceptance.xyz/favicon/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://paradoxofacceptance.xyz/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="https://paradoxofacceptance.xyz/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="https://paradoxofacceptance.xyz/favicon/apple-touch-icon.png">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
 <nav class="poa-nav">
-  <a href="https://paradoxofacceptance.xyz/paradox-of-acceptance/" class="poa-nav-brand">Paradox of Acceptance</a>
+  <a href="/" class="poa-nav-brand">Paradox of Acceptance</a>
   <div class="poa-nav-links">
-    <a href="https://paradoxofacceptance.xyz/paradox-of-acceptance/" class="active">Tools</a>
-    <a href="https://paradoxofacceptance.xyz/mindfulness-essays/">Essays</a>
-    <a href="https://paradoxofacceptance.xyz/mindfulness-wiki/">Wiki</a>
+    <a href="/" class="active">Tools</a>
+    <a href="/mindfulness-essays/">Essays</a>
+    <a href="/mindfulness-wiki/">Wiki</a>
   </div>
 </nav>
 
@@ -519,8 +513,8 @@ h1 {
       </div>
     </div>
     <div class="q-nav">
-      <button class="nav-btn" disabled>← Back</button>
-      <button class="nav-btn primary" id="next0" onclick="next(0)" disabled>Continue →</button>
+      <button class="nav-btn" disabled>&larr; Back</button>
+      <button class="nav-btn primary" id="next0" onclick="next(0)" disabled>Continue &rarr;</button>
     </div>
   </div>
 
@@ -537,8 +531,8 @@ h1 {
       </div>
     </div>
     <div class="q-nav">
-      <button class="nav-btn" onclick="prev(1)">← Back</button>
-      <button class="nav-btn primary" id="next1" onclick="next(1)" disabled>Continue →</button>
+      <button class="nav-btn" onclick="prev(1)">&larr; Back</button>
+      <button class="nav-btn primary" id="next1" onclick="next(1)" disabled>Continue &rarr;</button>
     </div>
   </div>
 
@@ -555,8 +549,8 @@ h1 {
       </div>
     </div>
     <div class="q-nav">
-      <button class="nav-btn" onclick="prev(2)">← Back</button>
-      <button class="nav-btn primary" id="next2" onclick="next(2)" disabled>Continue →</button>
+      <button class="nav-btn" onclick="prev(2)">&larr; Back</button>
+      <button class="nav-btn primary" id="next2" onclick="next(2)" disabled>Continue &rarr;</button>
     </div>
   </div>
 
@@ -573,8 +567,8 @@ h1 {
       </div>
     </div>
     <div class="q-nav">
-      <button class="nav-btn" onclick="prev(3)">← Back</button>
-      <button class="nav-btn primary" id="next3" onclick="next(3)" disabled>Continue →</button>
+      <button class="nav-btn" onclick="prev(3)">&larr; Back</button>
+      <button class="nav-btn primary" id="next3" onclick="next(3)" disabled>Continue &rarr;</button>
     </div>
   </div>
 
@@ -591,8 +585,8 @@ h1 {
       </div>
     </div>
     <div class="q-nav">
-      <button class="nav-btn" onclick="prev(4)">← Back</button>
-      <button class="nav-btn primary" id="next4" onclick="showResult()" disabled>See my recommendation →</button>
+      <button class="nav-btn" onclick="prev(4)">&larr; Back</button>
+      <button class="nav-btn primary" id="next4" onclick="showResult()" disabled>See my recommendation &rarr;</button>
     </div>
   </div>
 
@@ -622,7 +616,7 @@ h1 {
           <div class="secondary-note" id="resSecondary"></div>
         </div>
         <div class="result-actions">
-          <a class="action-link" href="https://paradoxofacceptance.xyz/meditation-quiz/" target="_blank">What kind of meditator are you? →</a>
+          <a class="action-link" href="https://paradoxofacceptance.xyz/meditation-quiz/" target="_blank">What kind of meditator are you? &rarr;</a>
           <button class="restart-btn" onclick="restart()">Start over</button>
         </div>
       </div>
@@ -634,7 +628,7 @@ h1 {
 <footer class="site-footer">
   <div class="footer-inner">
     <div>
-      <a href="https://paradoxofacceptance.xyz/paradox-of-acceptance/" class="footer-brand-link">Paradox of Acceptance</a>
+      <a href="/" class="footer-brand-link">Paradox of Acceptance</a>
       <p class="footer-tagline">Tools for the questions practice raises.</p>
     </div>
     <nav class="footer-nav" aria-label="Footer">
@@ -700,66 +694,66 @@ const results = [
   {
     name: "Mindfulness-Based Stress Reduction",
     tagline: "Structured, evidence-based, clinically validated. Built for people who want real results from a reliable method.",
-    what: "Originally developed as an 8-week clinical program, MBSR-style practice combines breath awareness, body scanning, and mindful movement. It's the most thoroughly researched approach to mindfulness, with a robust evidence base for stress, anxiety, and focus. It doesn't require any philosophical commitment — it works whether or not you believe in anything.",
+    what: "Originally developed as an 8-week clinical program, MBSR-style practice combines breath awareness, body scanning, and mindful movement. It\u2019s the most thoroughly researched approach to mindfulness, with a robust evidence base for stress, anxiety, and focus. It doesn\u2019t require any philosophical commitment \u2014 it works whether or not you believe in anything.",
     practices: [
-      "Daily body scan: 10–20 minutes of systematic attention through the body",
-      "Sitting practice: anchor on breath, return when distracted — simple, repeatable",
+      "Daily body scan: 10\u201320 minutes of systematic attention through the body",
+      "Sitting practice: anchor on breath, return when distracted \u2014 simple, repeatable",
       "Mindful movement: one daily task (eating, walking, washing) done with full attention",
       "3-minute breathing space: structured pause when stressed or overwhelmed"
     ],
-    caveat: "MBSR is designed primarily for wellbeing, not for deep insight or awakening. If your interest moves in that direction over time, you may find yourself wanting a more contemplative approach. It's also most effective with some structure — an app alone may not provide enough scaffolding.",
+    caveat: "MBSR is designed primarily for wellbeing, not for deep insight or awakening. If your interest moves in that direction over time, you may find yourself wanting a more contemplative approach. It\u2019s also most effective with some structure \u2014 an app alone may not provide enough scaffolding.",
     secondary: null
   },
   {
     name: "Insight Meditation (Vipassana)",
     tagline: "Systematic observation of experience as it unfolds. Gradual, methodical, and surprisingly deep.",
-    what: "Insight meditation involves careful, sustained attention to sensory experience — sensations, thoughts, and emotions — with the aim of recognizing their impermanent, impersonal nature. The classic form uses a noting technique: mentally labeling what arises (\"thinking,\" \"pain,\" \"planning\") to develop clarity and non-reactivity. Benefits accumulate gradually and reliably. This is not a quick-results approach.",
+    what: "Insight meditation involves careful, sustained attention to sensory experience \u2014 sensations, thoughts, and emotions \u2014 with the aim of recognizing their impermanent, impersonal nature. The classic form uses a noting technique: mentally labeling what arises (\u201Cthinking,\u201D \u201Cpain,\u201D \u201Cplanning\u201D) to develop clarity and non-reactivity. Benefits accumulate gradually and reliably. This is not a quick-results approach.",
     practices: [
-      "Noting: silently label experience as it arises — \"in, out\" with breath, \"thinking\" for thoughts",
+      "Noting: silently label experience as it arises \u2014 \u201Cin, out\u201D with breath, \u201Cthinking\u201D for thoughts",
       "Scan: systematic attention through body sensations from head to feet",
       "Walking meditation: slow deliberate walking with attention on each step",
       "Formal retreats: weekend or longer intensives accelerate progress significantly"
     ],
-    caveat: "Intensive insight practice can surface difficult material — memories, emotions, and perceptual distortions. This isn't common, but it happens. If you have a trauma history or significant mental health concerns, practicing with a qualified teacher rather than self-directing is worth the investment. The benefits are real, but the path isn't always smooth.",
-    secondary: "Given your experience level, a non-dual pointing approach may also be worth exploring — particularly if you hit a ceiling where noting practice starts to feel mechanical."
+    caveat: "Intensive insight practice can surface difficult material \u2014 memories, emotions, and perceptual distortions. This isn\u2019t common, but it happens. If you have a trauma history or significant mental health concerns, practicing with a qualified teacher rather than self-directing is worth the investment. The benefits are real, but the path isn\u2019t always smooth.",
+    secondary: "Given your experience level, a non-dual pointing approach may also be worth exploring \u2014 particularly if you hit a ceiling where noting practice starts to feel mechanical."
   },
   {
     name: "Non-Dual Inquiry",
     tagline: "Pointing directly at the nature of awareness itself, rather than working with its contents.",
-    what: "Rather than training attention to rest on objects (breath, sensations), non-dual inquiry investigates who or what is doing the noticing. It uses direct pointing — 'what is aware right now?' — to shift identification from the contents of experience to the awareness in which they appear. This approach has roots in multiple traditions (Dzogchen, Advaita, Zen) and has been adapted into secular forms. It tends to feel less like practice and more like recognition.",
+    what: "Rather than training attention to rest on objects (breath, sensations), non-dual inquiry investigates who or what is doing the noticing. It uses direct pointing \u2014 \u2018what is aware right now?\u2019 \u2014 to shift identification from the contents of experience to the awareness in which they appear. This approach has roots in multiple traditions (Dzogchen, Advaita, Zen) and has been adapted into secular forms. It tends to feel less like practice and more like recognition.",
     practices: [
       "Open awareness: let attention rest as awareness itself rather than on any particular object",
-      "Self-inquiry: 'who is aware right now?' — not as a question to think about, but to look directly",
+      "Self-inquiry: \u2018who is aware right now?\u2019 \u2014 not as a question to think about, but to look directly",
       "Resting practice: instead of focusing, simply let experience be as it is without manipulation",
       "Work with a teacher: this approach works better with direct transmission than from a book"
     ],
-    caveat: "Non-dual inquiry can feel abstract or destabilizing without some baseline stability from concentration practice. It tends to work best for people who have done enough formal practice to stabilize attention, and who have some support — a teacher, group, or at minimum good resources. Going too fast into this territory without grounding is one of the more common causes of disorienting experiences.",
+    caveat: "Non-dual inquiry can feel abstract or destabilizing without some baseline stability from concentration practice. It tends to work best for people who have done enough formal practice to stabilize attention, and who have some support \u2014 a teacher, group, or at minimum good resources. Going too fast into this territory without grounding is one of the more common causes of disorienting experiences.",
     secondary: "If you find the inquiry too abstract to work with directly, insight meditation builds a reliable foundation first."
   },
   {
     name: "Daily-Life Integration",
     tagline: "Making awareness a feature of ordinary activities, not a separate thing you do.",
-    what: "Instead of carving out dedicated meditation sessions, integration practice treats daily life as the medium. The commitment is to bring genuine attention — not just going through the motions — to specific chosen activities. This is lower-barrier than formal sitting and, when done seriously, produces real results. It's the most sustainable approach for busy schedules and people who consistently struggle with consistency in formal practice.",
+    what: "Instead of carving out dedicated meditation sessions, integration practice treats daily life as the medium. The commitment is to bring genuine attention \u2014 not just going through the motions \u2014 to specific chosen activities. This is lower-barrier than formal sitting and, when done seriously, produces real results. It\u2019s the most sustainable approach for busy schedules and people who consistently struggle with consistency in formal practice.",
     practices: [
       "One mindful activity daily: pick something routine (coffee, commute, dishes) and do it with full attention",
       "Pause practice: 3 conscious breaths before entering a meeting, checking your phone, or responding to stress",
-      "Sensory grounding: 'what can I hear right now?' — brief, repeatable, anywhere",
+      "Sensory grounding: \u2018what can I hear right now?\u2019 \u2014 brief, repeatable, anywhere",
       "End-of-day reflection: 2 minutes reviewing where you were present vs. on autopilot"
     ],
-    caveat: "Integration practice tends to progress more slowly than formal sitting, and it's easy to drift — to tell yourself you're practicing mindfulness while actually just going through the motions with awareness tacked on. Building in a weekly anchor (one longer formal sit, a group, or a check-in with a teacher) significantly improves outcomes. It's a complement to formal practice, not a permanent replacement.",
+    caveat: "Integration practice tends to progress more slowly than formal sitting, and it\u2019s easy to drift \u2014 to tell yourself you\u2019re practicing mindfulness while actually just going through the motions with awareness tacked on. Building in a weekly anchor (one longer formal sit, a group, or a check-in with a teacher) significantly improves outcomes. It\u2019s a complement to formal practice, not a permanent replacement.",
     secondary: "Once consistency improves, adding even 10 minutes of formal sitting daily tends to produce noticeably better results than informal practice alone."
   },
   {
     name: "Supported / Therapeutic Practice",
     tagline: "Mindfulness with qualified guidance, tailored to your history and individual needs.",
-    what: "Not all difficulties with meditation respond to more or different meditation. For some people — particularly those with trauma histories, significant mental health concerns, or prior adverse experiences from practice — working with a qualified therapist or trauma-informed teacher is not just preferable but genuinely important. This isn't a limitation. Individual variation in how people respond to different practices is real, well-documented, and consistently underestimated.",
+    what: "Not all difficulties with meditation respond to more or different meditation. For some people \u2014 particularly those with trauma histories, significant mental health concerns, or prior adverse experiences from practice \u2014 working with a qualified therapist or trauma-informed teacher is not just preferable but genuinely important. This isn\u2019t a limitation. Individual variation in how people respond to different practices is real, well-documented, and consistently underestimated.",
     practices: [
       "MBSR or Mindfulness-Based Cognitive Therapy (MBCT) with instructor support",
       "Individual therapy with a clinician who understands contemplative practice",
       "Trauma-sensitive mindfulness: modified approach with explicit safety protocols",
       "Grounding-first: somatic practices that regulate the nervous system before formal meditation"
     ],
-    caveat: "Finding the right support takes effort. Not all therapists understand meditation, and not all meditation teachers understand trauma. Worth being specific when you look: 'trauma-informed mindfulness' and 'MBCT' are useful search terms. The research on individual variation in meditation response is clear — approach matters, and one size does not fit all. Starting slowly, with professional support, is the evidence-based path.",
+    caveat: "Finding the right support takes effort. Not all therapists understand meditation, and not all meditation teachers understand trauma. Worth being specific when you look: \u2018trauma-informed mindfulness\u2019 and \u2018MBCT\u2019 are useful search terms. The research on individual variation in meditation response is clear \u2014 approach matters, and one size does not fit all. Starting slowly, with professional support, is the evidence-based path.",
     secondary: "As your practice stabilizes with support, MBSR-style formal practice is usually a natural and safe next step."
   }
 ];
@@ -828,6 +822,9 @@ function showResult() {
   document.getElementById('sResult').classList.add('active');
   document.getElementById('progressWrap').style.display = 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Supabase: mark tool as completed
+  markCompleted();
 }
 
 function restart() {
@@ -841,6 +838,37 @@ function restart() {
   document.getElementById('progressLabel').textContent = 'Question 1 of 5';
   document.getElementById('secondaryBlock').style.display = 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ---- Supabase Integration ----
+(function() {
+  if (typeof supabase === 'undefined') return;
+
+  const sb = supabase.createClient(
+    'https://jyxwnfgcqgiqxjdlypvr.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5eHduZmdjcWdpcXhqZGx5cHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyODkxNTYsImV4cCI6MjA4ODg2NTE1Nn0.4NFTioFSjRZVRqOB9kXToi_UueNrvxBj-vy6uRtCtrE'
+  );
+
+  window.markCompleted = async function() {
+    try {
+      const { data: { session } } = await sb.auth.getSession();
+      if (session) {
+        await sb.from('tool_progress').upsert({
+          user_id: session.user.id,
+          tool_slug: 'meditation-recommender',
+          status: 'completed',
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id,tool_slug' });
+      }
+    } catch (e) {
+      // silently fail — non-critical
+    }
+  };
+})();
+
+// Fallback if Supabase didn't load
+if (typeof markCompleted === 'undefined') {
+  window.markCompleted = function() {};
 }
 </script>
 </body>
